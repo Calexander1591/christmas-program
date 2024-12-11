@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            background: #8B0000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .number-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .number {
+            position: absolute;
+            color: rgba(0, 0, 0, 0.3);
+            font-family: monospace;
+            font-size: 1.2em;
+            animation: numberFall linear infinite;
+        }
+
+        @keyframes numberFall {
+            from { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+
+        .content-card {
+            background: rgba(139, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            margin: 2em;
+            padding: 2em;
+            border-radius: 15px;
+        }
+
+        .glitch-text {
+            text-shadow: 2px 2px #000;
+            animation: glitch 3s infinite;
+        }
+
+        .cast-card, .musical-number {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1em;
+            border-radius: 8px;
+            margin: 0.5em;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Previous styles maintained */
+    </style>
+</head>
+<body>
+    <div class="loading-bar"></div>
+    <div class="number-rain"></div>
+
+    <main>
+        <section class="scroll-section title">
+            <div class="content-card">
+                <h1 class="glitch-text">The Christmas That Almost Wasn't</h1>
+                <h2>World Premiere</h2>
+                <h3>Okeene Public Schools Fine Arts Department</h3>
+                <h4>December 2024</h4>
+            </div>
+        </section>
+
+        <section class="scroll-section opening-acts">
+            <div class="content-card">
+                <h2>Opening Celebration</h2>
+                <h3>Featuring First Grade and Kindergarten</h3>
+                <div class="musical-number">1. Suzy Snowflake</div>
+                <div class="musical-number">2. 5 Little Reindeer</div>
+                <div class="musical-number">3. Feliz Navidad</div>
+                <div class="musical-number">4. Silver and Gold</div>
+            </div>
+        </section>
+
+        <section class="scroll-section musical">
+            <div class="content-card">
+                <h2>The Musical</h2>
+                <h3>Written, Composed, and Directed by Christopher Alexander</h3>
+                <div class="musical-numbers">
+                    <div class="musical-number">1. "I Want More"</div>
+                    <div class="musical-number">2. "Welcome to Order"</div>
+                    <div class="musical-number">3. "Grey World"</div>
+                    <div class="musical-number">4. "Numbers and Order"</div>
+                    <div class="musical-number">5. "The Greatest Gift of All"</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-section cast">
+            <div class="content-card">
+                <h2>Featured Cast</h2>
+                <div class="cast-grid">
+                    <div class="cast-card">Madison Green - Raylee Fisher</div>
+                    <div class="cast-card">Mama Green - Violet Johannesmeyer</div>
+                    <div class="cast-card">Maximilian Grey - Casen Cottrill</div>
+                    <div class="cast-card">Max's Assistant - Lincoln Unruh</div>
+                </div>
+
+                <h3>Featured Ensemble</h3>
+                <div class="ensemble-grid">
+                    <div class="cast-card">Finley Krause</div>
+                    <div class="cast-card">Everlynn Cass</div>
+                    <div class="cast-card">Addison Bachmann</div>
+                    <div class="cast-card">Autumn Schultz</div>
+                    <div class="cast-card">Lillie Winters</div>
+                    <div class="cast-card">Ella Noll</div>
+                    <div class="cast-card">Andrew Williams</div>
+                    <div class="cast-card">Paisley Jones</div>
+                    <div class="cast-card">Anna Parker</div>
+                    <div class="cast-card">Gabe Meyer</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-section special-thanks">
+            <div class="content-card">
+                <h2>Special Thanks</h2>
+                <div class="thanks-grid">
+                    <p>Ronda Jinkens</p>
+                    <p>Paige Krause</p>
+                    <p>Brada Unruh</p>
+                    <p>Danielle McGinn</p>
+                    <p>Sara Hauser</p>
+                    <p>Rhonda Heckart</p>
+                    <p>Drew Krause</p>
+                    <p>Quintin Wray</p>
+                    <p>Ginny Dobrinski</p>
+                    <p>Austin Booth</p>
+                    <p>Kiley Feely - Quality Control and Technical Director</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-section creator">
+            <div class="content-card creator-section">
+                <h2>About the Creator</h2>
+                <p>Christopher Alexander serves as the band director and music director at Okeene Public Schools. His journey in musical arrangement began during his senior year at Putnam City West, where he arranged for the "Spirit of West" band. Now with sixteen award-winning marching shows to his credit, this original musical marks his debut as a musical theatre composer. As writer, composer, lyricist, and director, this production represents the culmination of his artistic vision and dedication to music education. The piece was crafted specifically to challenge students beyond their comfort zones, immersing them in the complex process of mounting a full-scale musical production.</p>
+            </div>
+        </section>
+
+        <section class="scroll-section final">
+            <div class="content-card">
+                <p>To the Okeene administrative team and community for their continued support of the Okeene Fine Arts Department. Your commitment to arts education makes productions like this possible.</p>
+                <div class="footnote">
+                    <p>Runtime: 54 minutes</p>
+                    <p>Please silence all mobile devices during the performance.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Number rain effect
+        function createNumberRain() {
+            const container = document.createElement('div');
+            container.className = 'number-rain';
+            document.body.appendChild(container);
+
+            function createNumber() {
+                const number = document.createElement('div');
+                number.className = 'number';
+                number.style.left = Math.random() * 100 + 'vw';
+                number.style.animationDuration = 5 + Math.random() * 10 + 's';
+                number.textContent = Math.floor(Math.random() * 10);
+                container.appendChild(number);
+
+                setTimeout(() => {
+                    number.remove();
+                }, 15000);
+            }
+
+            setInterval(createNumber, 100);
+        }
+
+        createNumberRain();
+    </script>
+</body>
+</html>
